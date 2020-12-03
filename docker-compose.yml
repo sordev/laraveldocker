@@ -48,3 +48,13 @@ services:
     - "9000:9000"
     networks:
       - laravel
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog
+    restart: always
+    ports:
+    - 1025:1025
+    - 8025:8025
+    networks:
+        - laravel
