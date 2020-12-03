@@ -58,3 +58,10 @@ services:
     - 8025:8025
     networks:
         - laravel
+
+  redis:
+    image: redis
+    ports:
+    - 6379:6379
+    networks:
+      - laravel
