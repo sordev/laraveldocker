@@ -6,7 +6,7 @@ networks:
 services:
   nginx:
     image: library/nginx:stable-alpine
-    # container_name: nginx
+    container_name: nginx
     ports:
     - "8080:80"
     volumes:
@@ -20,7 +20,7 @@ services:
 
   mysql:
     image: library/mysql:5.7.22
-    # container_name: mysql
+    container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
@@ -41,7 +41,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # container_name: php
+    container_name: php
     volumes:
     - ./src:/var/www/html
     ports:
@@ -51,7 +51,7 @@ services:
 
   mailhog:
     image: mailhog/mailhog:latest
-    # container_name: mailhog
+    container_name: mailhog
     restart: always
     ports:
     - 1025:1025
